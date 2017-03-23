@@ -89,5 +89,17 @@ class ViewController: UIViewController {
         display.text = String("0")
     }
     
+    var savedProgram: CalculatorBrain.PropertyList?
+    @IBAction func save(sender: AnyObject) {
+        savedProgram = brain.program
+    }
+    
+    @IBAction func resore(sender: AnyObject) {
+        if savedProgram != nil {
+            brain.program = savedProgram!
+            displayValue = brain.result
+        }
+    }
+    
 }
 
